@@ -1,3 +1,70 @@
+export interface user {
+  _id: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  friends: friend[];
+  views: string[];
+  verified: boolean;
+  createdAt: string;
+  updatedAt: string;
+  __v: number;
+  profileUrl?: string;
+  token?: string;
+}
+
+export interface friend {
+  _id: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  friends?: string[];
+  views?: string[];
+  verified?: boolean;
+  createdAt?: string;
+  updatedAt?: string;
+  __v?: number;
+  profileUrl?: string;
+  location?: string;
+  profession?: string;
+}
+
+export interface post {
+  _id: string;
+  userId: user;
+  description: string;
+  image?: string;
+  likes: string[];
+  comments: Comment[];
+  createdAt: string;
+  updatedAt: string;
+  __v: number;
+}
+
+export interface comment {
+  _id: string;
+  userId: user;
+  postId: string;
+  comment: string;
+  from: string;
+  likes: string[];
+  replies: reply[];
+  createdAt: string;
+  updatedAt: string;
+  __v: number;
+}
+
+export interface reply {
+  userId: user;
+  from: string;
+  replyAt: string;
+  comment: string;
+  created_At: string;
+  updated_At: string;
+  likes: string[];
+  _id: string;
+}
+
 export const user = {
   _id: "64df3c064180b81adfe41d4b",
   firstName: "Code",
