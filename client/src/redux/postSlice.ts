@@ -1,8 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { dispatch } from "./store";
+// import { dispatch } from "./store";
+import { Dispatch } from "redux";
+import { Post } from "../shared/interface";
 
-const initialState = {
-  posts: {},
+interface PostState {
+  posts: Post[];
+}
+
+const initialState: PostState = {
+  posts: [],
 };
 
 const postSlice = createSlice({
@@ -17,8 +23,8 @@ const postSlice = createSlice({
 
 export default postSlice.reducer;
 
-export const SetPost = (post) => {
-  return (dispatch, getState) => {
+export const SetPost = (post: Post[]) => {
+  return (dispatch: Dispatch) => {
     dispatch(postSlice.actions.getPosts(post));
   };
 };

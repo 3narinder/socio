@@ -21,10 +21,8 @@ const Layout = () => {
 const App = () => {
   const { theme } = useSelector((state) => state.theme);
 
-  console.log(theme, `<---- theme from redux`);
-
   return (
-    <div className="bg-bgColor h-screen text-center">
+    <div data-theme={theme} className="bg-bgColor h-screen">
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
