@@ -165,7 +165,7 @@ const Login = () => {
             <img
               src={LoginImg}
               alt="background image"
-              className="p-10 w-full h-auto z-30"
+              className=" p-10 w-full h-auto z-30"
             />
           </div>
         </div>

@@ -1,75 +1,9 @@
-export interface user {
-  _id: string;
-  firstName: string;
-  lastName: string;
-  email: string;
-  friends: friend[];
-  views: string[];
-  verified: boolean;
-  createdAt: string;
-  updatedAt: string;
-  __v: number;
-  profileUrl?: string;
-  token?: string;
-}
-
-export interface friend {
-  _id: string;
-  firstName: string;
-  lastName: string;
-  email: string;
-  friends?: string[];
-  views?: string[];
-  verified?: boolean;
-  createdAt?: string;
-  updatedAt?: string;
-  __v?: number;
-  profileUrl?: string;
-  location?: string;
-  profession?: string;
-}
-
-export interface post {
-  _id: string;
-  userId: user;
-  description: string;
-  image?: string;
-  likes: string[];
-  comments: Comment[];
-  createdAt: string;
-  updatedAt: string;
-  __v: number;
-}
-
-export interface comment {
-  _id: string;
-  userId: user;
-  postId: string;
-  comment: string;
-  from: string;
-  likes: string[];
-  replies: reply[];
-  createdAt: string;
-  updatedAt: string;
-  __v: number;
-}
-
-export interface reply {
-  userId: user;
-  from: string;
-  replyAt: string;
-  comment: string;
-  created_At: string;
-  updated_At: string;
-  likes: string[];
-  _id: string;
-}
-
 export const user = {
   _id: "64df3c064180b81adfe41d4b",
-  firstName: "Code",
-  lastName: "Wave",
-  email: "codewavewithasante@gmail.com",
+  firstName: "John",
+  lastName: "wick",
+  email: "johnwickgunse@gmail.com",
+  profession: "Assassin",
   friends: [
     {
       _id: "64df3aec4180b81adfe41d32",
@@ -153,7 +87,7 @@ export const user = {
   createdAt: "2023-08-18T09:38:14.179Z",
   updatedAt: "2023-08-21T06:46:18.258Z",
   profileUrl:
-    "https://res.cloudinary.com/djs3wu5bg/image/upload/v1683874454/samples/people/boy-snow-hoodie.jpg",
+    "https://images.hdqwalls.com/download/john-wick-the-saga-yf-1366x768.jpg",
   token: "hZWFmZmU3NmMiLCJpYXQiOjE2OTIwMzY5",
 };
 
@@ -258,7 +192,7 @@ export const posts = [
     },
     description:
       "What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Why do we use it? It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, ",
-    likes: ["64df424b4a4c0d47b5369f65"],
+    likes: ["64df424b4a4c0d47b5369f65", "64df39704180b81adfe41d0b"],
     comments: ["64e2d1c977e497bd3a0bf67b"],
     createdAt: "2023-08-18T10:10:06.969Z",
     updatedAt: "2023-08-21T02:54:01.806Z",

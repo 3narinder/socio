@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
-// import { dispatch } from "./store";
 import { Dispatch } from "redux";
 import { User } from "../shared/interface.ts";
+import { user } from "../assets/data.ts";
 
 interface UserState {
   user?: User;
@@ -9,7 +9,7 @@ interface UserState {
 }
 
 const initialState: UserState = {
-  user: JSON.parse(window?.localStorage.getItem("user")) || {},
+  user: JSON.parse(window?.localStorage.getItem("user")) || user,
   edit: false,
 };
 
@@ -27,8 +27,8 @@ const userSlice = createSlice({
       localStorage.removeItem("user");
     },
 
-    updateProfile(state, action: { payload: User }) {
-      state.user = action.payload;
+    updateProfile(state, action: { payload: boolean }) {
+      state.edit = action.payload;
     },
   },
 });
@@ -43,6 +43,12 @@ export const Logout = () => (dispatch: Dispatch) => {
   dispatch(userSlice.actions.logout());
 };
 
-export const UpdateProfile = (val: User) => (dispatch: Dispatch) => {
-  dispatch(userSlice.actions.updateProfile(val));
-};
+// export const UpdateProfile = (val: User) => (dispatch: Dispatch) => {
+//   dispatch(userSlice.actions.updateProfile(val));
+// };
+
+export function UpdateProfile(val: User) {
+  return (dispatch: Dispatch, setState) => {
+    dispatch(userSlice.actions.updateProfile(val));
+  };
+}

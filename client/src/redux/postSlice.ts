@@ -3,12 +3,16 @@ import { createSlice } from "@reduxjs/toolkit";
 import { Dispatch } from "redux";
 import { Post } from "../shared/interface";
 
+import { posts } from "../assets/data";
+
+console.log(posts);
+
 interface PostState {
   posts: Post[];
 }
 
 const initialState: PostState = {
-  posts: [],
+  posts: posts,
 };
 
 const postSlice = createSlice({

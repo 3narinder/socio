@@ -48,13 +48,13 @@ export interface Comment {
   comment: string;
   from: string;
   likes: string[];
-  replies: reply[];
+  replies: Reply[];
   createdAt: string;
   updatedAt: string;
   __v: number;
 }
 
-export interface reply {
+export interface Reply {
   userId: User;
   from: string;
   replyAt: string;

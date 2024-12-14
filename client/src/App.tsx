@@ -2,12 +2,8 @@ import { Outlet, Navigate, Routes, Route, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Home, Login, Profile, Register, ResetPassword } from "./pages";
 
-// import { user } from "./assets/data";
-
 const Layout = () => {
   const { user } = useSelector((state) => state.user);
-
-  console.log(user, `<---- user from redux`);
 
   const location = useLocation();
 
@@ -22,7 +18,7 @@ const App = () => {
   const { theme } = useSelector((state) => state.theme);
 
   return (
-    <div data-theme={theme} className="bg-bgColor h-screen">
+    <div data-theme={theme} className="w-full min-h-[100vh] overflow-y-auto">
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
